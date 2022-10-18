@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        debugger;
+        class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+        }
+
+        var edad = 29;
+        let nombre = "Carmen";
+        const esMujer = true;
+        console.log(edad, nombre, esMujer);
+        
+
+        
+        // Uso de const
+        const carmen = new Persona(nombre, edad);
+        const superman = new SuperHeroe("superman");
+        carmen.nombre = "Carmen2"; // Mutar/Cambiar el nombre de la instancia "carmen" es posible
+        carmen = new Persona("Magda", 30); // reasignar a la variable carmen no es posible
+
+        function SuperHeroe(nombre) {
+            this.nombre = nombre;
+        }
+
+        var sumar = (a, b) => {
+            return a + b;
+        }
+        
+    </script>
+</body>
+</html>
