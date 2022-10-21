@@ -11,7 +11,7 @@ class Empleado {
         //`Hola me llamo ${this.nombre} y tabajo como ${this.puesto}`
     }
 }
-
+g
 class CrudEmpleado {
     // Esta funcion imita a la funcion map (de los Arrays)
     // fakeMap(callback){
