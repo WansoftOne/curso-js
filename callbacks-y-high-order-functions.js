@@ -7,6 +7,7 @@ let fun1 = (elemento) => {
 // La funcion forEach de los arrays es una high order function
 // y fun1 es un callback.
 arr.forEach(fun1);
+// Ejemplo de high-order function
 // high order function -> es una funcion que tiene como parametro a otra funcion.
 function fakeForEach(callback, arr) {
     for(let i=0; i <arr.length; i++) {
@@ -32,7 +33,7 @@ const lados = [10, 15, 5, 3];
 //     return resultados;
 // }
 
-
+// Ejemplo practico de high-order functions
 function calcular(arr, callback) {
     let resultados = [];
     for (let lado of arr) {
