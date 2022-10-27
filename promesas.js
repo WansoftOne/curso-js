@@ -24,8 +24,7 @@ function sumar(a, b) {
             resolve(resultado);
         } catch (error) {
             reject(error);
-        }
-        
+        } 
     });
 }
 
