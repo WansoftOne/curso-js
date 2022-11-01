@@ -26,6 +26,10 @@ let ordenesDeCompra = [];
 
 // Esta clase ayuda a relalizar las operaciones de CRUD a nuestra "Base de Datos"
 class CrudProducto {
+    constructor() {
+        this.nombre = "Carmen"
+    }
+
     /**
      * Busca un producto con base a su id.
      * retorna un producto en caso de que el id existe. en caso contrario este metodo
@@ -43,6 +47,7 @@ class CrudProducto {
     }
 
     async actualizarStock(idDelProducto, cantidad) {
+        const x = 0;
         for (let producto of productos) {
             if (idDelProducto === producto.id) {
                 const nuevoStock = producto.stock - cantidad;
@@ -51,7 +56,7 @@ class CrudProducto {
                 }
 
                 producto.stock = nuevoStock;
-                return;
+                break;
             }
         }
     }
@@ -91,10 +96,13 @@ class CrudProducto {
 }
 
 class ServicoDePagos {
+    
     /**
-     * Estado del pago:
-     * 1.- Compra Exitosa
-     * 2.- Compra Rechazada
+     * Metodo utilizado para realizar el pago de una compra
+     * @param {Object} peticionDePago
+     * @param {string} peticionDePago.tipoTarjeta
+     * @param {string} peticionDePago.tajeta
+     * @param {number} peticionDePago.totalAPagar
      */
     async pagar(peticionDePago) {
         return {
@@ -112,6 +120,13 @@ class ServicioDeVentas {
         this.crudProducto = new CrudProducto();
     }
     
+    /**
+     * 
+     * @param {Object[]} productos 
+     * @param {number} productos[].id - The name of an employee.
+     * @param {number} productos[].cantidad - The name of an employee. 
+     * @returns 
+     */
     async realizarCompra(productos, medioDePago) {
         debugger;
         // Cuando la orden ya fue creada ya sabemos cuanto debemos cobrar al cliente
